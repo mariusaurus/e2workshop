@@ -3,6 +3,7 @@ WORKDIR /opt
 RUN git clone https://github.com/NVIDIA/earth2mip
 WORKDIR /opt/earth2mip
 RUN pip install .
+RUN pip install cartopy babel
 
 # # just to be sure, install the latest modulus version
 # COPY ./modulus /opt/modulus
