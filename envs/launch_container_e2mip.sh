@@ -5,11 +5,9 @@ TAG=2401.01
 RUN_CMD='bash'
 PORT=8526
 
-MOUNTS="-v /home/mkoch/nv_sw:/nv_sw:rw"
-MOUNTS="-v /home/mkoch/Documents/projects/e2workshop:/e2ws:rw ${MOUNTS}"
-MOUNTS="-v /home/mkoch/Documents/playground/e2mip:/playground:rw ${MOUNTS}"
+MOUNTS="-v ${HOME}/nv_sw:/nv_sw:rw"
+MOUNTS="-v ${HOME}/Documents/projects/e2workshop:/e2ws:rw ${MOUNTS}"
 MOUNTS="-v ${HOME}/.cache:/root/.cache:rw ${MOUNTS}"
-# MOUNTS="-v ${HOME}:/root:rw ${MOUNTS}"
 
 WORKDIR=/e2ws
 
