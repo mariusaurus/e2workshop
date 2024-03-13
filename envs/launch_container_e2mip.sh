@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CONTAINER=nvcr.io/e5z5rmoykw68/e2_workshop/e2workshop
-TAG=2401.01
+TAG=2401.02
 RUN_CMD='bash'
 PORT=8526
 
