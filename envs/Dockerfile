@@ -17,3 +17,5 @@ RUN git clone https://github.com/NVIDIA/earth2mip
 WORKDIR /opt/earth2mip
 RUN pip install --no-input .
 RUN pip install cartopy babel
+
+WORKDIR /e2ws

@@ -20,15 +20,15 @@ hydra:
 
 
 ## Main options
-res_ckpt_filename: "./checkpoints/diffusion.mdlus"   
-  # Checkpoint filename for the generative model  
+res_ckpt_filename: "./checkpoints/diffusion.mdlus"
+  # Checkpoint filename for the generative model
 reg_ckpt_filename: "./checkpoints/regression.mdlus"
   # Checkpoint filename for the mean predictor model
 image_outdir: "image_outdir"
   # Where to save the output images
 seeds: "0-63"
   # Random seeds used for generation
-class_idx: null  
+class_idx: null
   # Class label. Null is random
 num_steps: 8
   # Number of sampling steps
@@ -54,7 +54,7 @@ use_torch_compile: True
 ## Data options
 patch_shape_x: 448
 patch_shape_y: 448
-overlap_pix: 4 
+overlap_pix: 4
 boundary_pix: 2
 times:
   - 2021-02-02T00:00:00
@@ -69,7 +69,8 @@ dataset:
   type: cwb
   train: False
   all_times: True
-  data_path: /data/data2/2023-01-24-cwb-4years.zarr
+  data_path: /e2ws_data/cwa_data/2023-01-24-cwb-4years.zarr
+  # data_path: /data/data2/2023-01-24-cwb-4years.zarr
   crop_size_x: 448
   crop_size_y: 448
   n_history: 0
@@ -107,7 +108,7 @@ S_churn: 0
   # Stochasticity strength
 S_min: 0
   # Stochasticity min noise level
-S_max: .inf 
+S_max: .inf
   # Stochasticity max noise level
 S_noise: 1
   # Stochasticity noise inflation
