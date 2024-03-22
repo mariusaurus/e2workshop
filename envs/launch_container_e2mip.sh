@@ -10,10 +10,10 @@ RUN_CMD='bash'
 PORT=8526
 
 # do not change below
-# MOUNTS="-v ${HOME}/nv_sw:/nv_sw:rw" # is that one required?
 MOUNTS="-v ${E2WORKSHOPDIR}:/e2ws:rw ${MOUNTS}"
 MOUNTS="-v ${CHACHE_PATH}:/root/.cache:rw ${MOUNTS}"
 MOUNTS="-v ${E2WS_DATA_PATH}:/e2ws_data:ro ${MOUNTS}"
+MOUNTS="-v /media/rachel/results:/one_day_data:rw ${MOUNTS}" #TODO remove
 
 WORKDIR=/e2ws
 

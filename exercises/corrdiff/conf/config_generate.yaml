@@ -26,7 +26,8 @@ reg_ckpt_filename: "./checkpoints/regression.mdlus"
   # Checkpoint filename for the mean predictor model
 image_outdir: "image_outdir"
   # Where to save the output images
-seeds: "0-63"
+# seeds: "0-63"
+seeds: "0-7"
   # Random seeds used for generation
 class_idx: null
   # Class label. Null is random
@@ -38,7 +39,7 @@ res_edm: true
   # If residual-based edm is used
 sampling_method: deterministic
   # Sampling method ["stochastic", "deterministic"]
-seed_batch_size: 32
+seed_batch_size: 8
   # batch size across the seed dimension
 force_fp16: true
   # Whether to force fp16 precision for the model. If false, it'll use the precision
@@ -46,7 +47,7 @@ force_fp16: true
 num_writer_workers: 1
   # number of workers to use for writing file
   # To support multiple workers a threadsafe version of the netCDF library must be used
-use_torch_compile: True
+use_torch_compile: False
   # whether to use torch.compile on the diffusion model
   # this will make the first time stamp generation very slow due to compilation overheads
   # but will significantly speed up subsequent inference runs
@@ -57,11 +58,12 @@ patch_shape_y: 448
 overlap_pix: 4
 boundary_pix: 2
 times:
-  - 2021-02-02T00:00:00
-  - 2021-03-02T00:00:00
-  - 2021-04-02T00:00:00
+  # - 2021-02-02T00:00:00
+  # - 2021-03-02T00:00:00
+  # - 2021-04-02T00:00:00
   # hurricane
   - 2021-09-12T00:00:00
+  - 2021-09-12T06:00:00
   - 2021-09-12T12:00:00
 
 ## Weather data options
@@ -69,8 +71,7 @@ dataset:
   type: cwb
   train: False
   all_times: True
-  data_path: /e2ws_data/cwa_data/2023-01-24-cwb-4years.zarr
-  # data_path: /data/data2/2023-01-24-cwb-4years.zarr
+  data_path: /e2ws_data/cwa_data/2021-09-12-cwb-1day.zarr
   crop_size_x: 448
   crop_size_y: 448
   n_history: 0
