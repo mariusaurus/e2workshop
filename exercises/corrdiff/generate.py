@@ -49,7 +49,7 @@ from training.time import convert_datetime_to_cftime, time_range
 time_format = "%Y-%m-%dT%H:%M:%S"
 
 
-@hydra.main(version_base="1.2", config_path="conf", config_name="config_generate")
+# @hydra.main(version_base="1.2", config_path="conf", config_name="config_generate")
 def main(cfg: DictConfig) -> None:
     """Generate random images using the techniques described in the paper
     "Elucidating the Design Space of Diffusion-Based Generative Models".

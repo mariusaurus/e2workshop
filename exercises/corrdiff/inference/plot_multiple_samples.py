@@ -23,11 +23,11 @@ import xarray
 parser = argparse.ArgumentParser()
 
 # Add the positional arguments
-parser.add_argument("netcdf_file", help="Path to the NetCDF file")
-parser.add_argument("output_dir", help="Path to the output directory")
+parser.add_argument("--netcdf_file", help="Path to the NetCDF file")
+parser.add_argument("--output_dir", help="Path to the output directory")
 
 # Add the optional argument
-parser.add_argument("--n-samples", help="Number of samples", default=5, type=int)
+parser.add_argument("--n_samples", help="Number of samples", default=5, type=int)
 
 # Parse the arguments
 args = parser.parse_args()
@@ -71,4 +71,4 @@ def main(netcdf_file, output_dir, n_samples):
     joblib.Parallel(n_jobs=8)(joblib.delayed(plot)(v) for v in merged)
 
 
-main()
+main(args.netcdf_file, args.output_dir, args.n_samples)
