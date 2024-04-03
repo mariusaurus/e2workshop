@@ -91,9 +91,9 @@ dataset:
   normalization: "v1"
 
 ## Deterministic sampler options
-sigma_min: null
+sigma_min: .002 # null
   # Lowest noise level
-sigma_max: null
+sigma_max: 800. # null
   # Highest noise level
 rho: 7
   # Time step exponent
