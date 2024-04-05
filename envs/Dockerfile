@@ -9,6 +9,7 @@ RUN pip install --no-input --upgrade pip
 WORKDIR /opt
 RUN git clone https://github.com/NVIDIA/modulus.git
 WORKDIR /opt/modulus
+RUN git checkout ee6b3ac0d4c32bca1c81f401d2bfd461887eb9a3
 RUN pip install --no-input .
 
 # get and install E2MIP

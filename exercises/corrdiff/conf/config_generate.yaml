@@ -26,17 +26,18 @@ reg_ckpt_filename: "/e2ws/exercises/corrdiff/checkpoints/regression.mdlus"
   # Checkpoint filename for the mean predictor model
 image_outdir: "image_outdir"
   # Where to save the output images
-# seeds: "0-63"
 seeds: "0-7"
   # Random seeds used for generation
 class_idx: null
   # Class label. Null is random
-num_steps: 8 #8
+num_steps: 18
   # Number of sampling steps
 sample_res: "full"
   # Sampling resolution
-res_edm: true
-  # If residual-based edm is used
+regression_only: false
+  # regression only inference
+diffusion_only: false
+  # diffusion only inference
 sampling_method: deterministic
   # Sampling method ["stochastic", "deterministic"]
 seed_batch_size: 8
@@ -91,9 +92,9 @@ dataset:
   normalization: "v1"
 
 ## Deterministic sampler options
-sigma_min: .002 # null
+sigma_min: null
   # Lowest noise level
-sigma_max: 800. # null
+sigma_max: 800.
   # Highest noise level
 rho: 7
   # Time step exponent

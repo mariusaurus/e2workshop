@@ -41,9 +41,11 @@ def plot_channels(group, time_idx: int):
     num_channels = len(group.variables)
     ncols = 4
     fig, axs = plt.subplots(
-        nrows=num_channels // ncols
-        if num_channels % ncols == 0
-        else num_channels // ncols + 1,
+        nrows=(
+            num_channels // ncols
+            if num_channels % ncols == 0
+            else num_channels // ncols + 1
+        ),
         ncols=ncols,
         sharex=True,
         sharey=True,
@@ -91,8 +93,8 @@ def get_clim(output_channels, f):
 parser = argparse.ArgumentParser()
 
 # Add the positional arguments
-parser.add_argument("--file", help="Path to the input file")
-parser.add_argument("--output_dir", help="Path to the output directory")
+parser.add_argument("file", help="Path to the input file")
+parser.add_argument("output_dir", help="Path to the output directory")
 
 # Add the optional argument
 parser.add_argument("--sample", help="Sample to plot", default=0, type=int)
@@ -202,4 +204,4 @@ def main(file, output_dir, sample):
 
 
 if __name__ == "__main__":
-    main(args.file, args.output_dir, args.sample)
+    main()

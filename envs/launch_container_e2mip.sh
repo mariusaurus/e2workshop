@@ -5,7 +5,7 @@ CHACHE_PATH=${HOME}/.cache
 E2WS_DATA_PATH=/media/rachel/e2ws_data
 
 CONTAINER=nvcr.io/e5z5rmoykw68/e2_workshop/e2workshop
-TAG=2401.02
+TAG=2401.03
 RUN_CMD='bash'
 PORT=8526
 
