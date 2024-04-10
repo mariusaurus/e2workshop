@@ -1,7 +1,7 @@
 #!/bin/bash
 
 E2WORKSHOPDIR=${HOME}/Documents/projects/e2workshop
-CHACHE_PATH=${HOME}/.cache
+# CHACHE_PATH=${HOME}/.cache
 E2WS_DATA_PATH=/media/rachel/e2ws_data
 
 CONTAINER=nvcr.io/e5z5rmoykw68/e2_workshop/e2workshop
@@ -11,9 +11,12 @@ PORT=8526
 
 # do not change below
 MOUNTS="-v ${E2WORKSHOPDIR}:/e2ws:rw ${MOUNTS}"
-MOUNTS="-v ${CHACHE_PATH}:/root/.cache:rw ${MOUNTS}"
-MOUNTS="-v ${E2WS_DATA_PATH}:/e2ws_data:ro ${MOUNTS}"
-MOUNTS="-v /media/rachel/results:/one_day_data:rw ${MOUNTS}" #TODO remove
+MOUNTS="-v ${E2WS_DATA_PATH}/earth2mip_cache:/root/.cache/earth2mip:rw ${MOUNTS}"
+MOUNTS="-v ${E2WS_DATA_PATH}/cwa_data:/cwa_data:ro ${MOUNTS}"
+MOUNTS="-v ${E2WS_DATA_PATH}/corrdiff_checkpoints:/corrdiff_checkpoints:ro ${MOUNTS}"
+# MOUNTS="-v ${E2WS_DATA_PATH}:/e2ws_data:ro ${MOUNTS}"
+# MOUNTS="-v ${CHACHE_PATH}:/root/.cache:rw ${MOUNTS}"
+# MOUNTS="-v ${E2WS_DATA_PATH}:/e2ws_data:ro ${MOUNTS}"
 
 WORKDIR=/e2ws
 

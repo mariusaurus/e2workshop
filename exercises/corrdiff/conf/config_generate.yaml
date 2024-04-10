@@ -19,10 +19,14 @@ hydra:
     chdir: False
 
 
+# ## Main options
+# res_ckpt_filename: "/e2ws/exercises/corrdiff/checkpoints/diffusion.mdlus"
+#   # Checkpoint filename for the generative model
+# reg_ckpt_filename: "/e2ws/exercises/corrdiff/checkpoints/regression.mdlus"
 ## Main options
-res_ckpt_filename: "/e2ws/exercises/corrdiff/checkpoints/diffusion.mdlus"
+res_ckpt_filename: "/corrdiff_checkpoints/diffusion.mdlus"
   # Checkpoint filename for the generative model
-reg_ckpt_filename: "/e2ws/exercises/corrdiff/checkpoints/regression.mdlus"
+reg_ckpt_filename: "/corrdiff_checkpoints/regression.mdlus"
   # Checkpoint filename for the mean predictor model
 image_outdir: "image_outdir"
   # Where to save the output images
@@ -30,7 +34,7 @@ seeds: "0-7"
   # Random seeds used for generation
 class_idx: null
   # Class label. Null is random
-num_steps: 18
+num_steps: 8
   # Number of sampling steps
 sample_res: "full"
   # Sampling resolution
@@ -72,7 +76,7 @@ dataset:
   type: cwb
   train: False
   all_times: True
-  data_path: /e2ws_data/cwa_data/2021-09-12-cwb-1day.zarr
+  data_path: /cwa_data/2021-09-12-cwb-1day.zarr
   crop_size_x: 448
   crop_size_y: 448
   n_history: 0
@@ -92,7 +96,7 @@ dataset:
   normalization: "v1"
 
 ## Deterministic sampler options
-sigma_min: null
+sigma_min: .002 # .002
   # Lowest noise level
 sigma_max: 800.
   # Highest noise level
