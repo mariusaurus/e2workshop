@@ -1,3 +1,9 @@
+## for the workshop, have at your desposal
+- cds user ID and API key (create free account at [here](https://cds.climate.copernicus.eu/api-how-to))
+- the data for the workshop. You should have received a link.
+- a running instance of the workshop container. Link to the image is also provided through email.
+
+
 ## launching the container
 - ssh to remote through port ID
 - `bash envs/launch_container_e2mip.sh` (if required, change port ID)
