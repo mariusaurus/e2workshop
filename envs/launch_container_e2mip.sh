@@ -1,22 +1,19 @@
 #!/bin/bash
 
+# provide path to code, to data and choose a port number different from you colleagues
 E2WORKSHOPDIR=${HOME}/Documents/projects/e2workshop
-# CHACHE_PATH=${HOME}/.cache
 E2WS_DATA_PATH=/media/rachel/e2ws_data
-
-CONTAINER=nvcr.io/e5z5rmoykw68/e2_workshop/e2workshop
-TAG=2401.03
-RUN_CMD='bash'
 PORT=8526
 
 # do not change below
+CONTAINER=nvcr.io/e5z5rmoykw68/e2_workshop/e2workshop
+TAG=2401.03
+RUN_CMD='bash'
+
 MOUNTS="-v ${E2WORKSHOPDIR}:/e2ws:rw ${MOUNTS}"
 MOUNTS="-v ${E2WS_DATA_PATH}/earth2mip_cache:/root/.cache/earth2mip:rw ${MOUNTS}"
 MOUNTS="-v ${E2WS_DATA_PATH}/cwa_data:/cwa_data:ro ${MOUNTS}"
 MOUNTS="-v ${E2WS_DATA_PATH}/corrdiff_checkpoints:/corrdiff_checkpoints:ro ${MOUNTS}"
-# MOUNTS="-v ${E2WS_DATA_PATH}:/e2ws_data:ro ${MOUNTS}"
-# MOUNTS="-v ${CHACHE_PATH}:/root/.cache:rw ${MOUNTS}"
-# MOUNTS="-v ${E2WS_DATA_PATH}:/e2ws_data:ro ${MOUNTS}"
 
 WORKDIR=/e2ws
 
